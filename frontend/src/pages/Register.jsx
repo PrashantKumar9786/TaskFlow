@@ -34,7 +34,7 @@ export default function Register() {
       <div className="w-full max-w-sm animate-fade-in">
         <div className="mb-8 text-center">
           <div className="inline-flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
+            {/* <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" />
                 <rect
@@ -65,9 +65,16 @@ export default function Register() {
                   opacity="0.25"
                 />
               </svg>
+            </div> */}
+            <div>
+              <img
+                src="public/Task.png"
+                alt="Task Manager"
+                className="w-15 h-15"
+              />
             </div>
             <span className="font-semibold text-lg tracking-tight">
-              TaskFlow
+              Task Manager - Stay On Track
             </span>
           </div>
           <h1 className="text-2xl font-semibold text-white">Create account</h1>
@@ -78,7 +85,7 @@ export default function Register() {
 
         <form onSubmit={submit} className="space-y-3">
           <div>
-            <label className="block text-xs font-medium text-zinc-400 mb-1.5">
+            <label className="block text-md font-medium text-[#ffffff] mb-1.5">
               Full name
             </label>
             <input
@@ -86,12 +93,12 @@ export default function Register() {
               required
               value={form.name}
               onChange={handle}
-              placeholder="Your name"
-              className="w-full bg-surface border border-border rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors"
+              placeholder="Enter Your name"
+              className="w-full bg-[#000000] border border-border rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-[#aaaaaa] transition-colors"
             />
           </div>
           <div>
-            <label className="block text-xs font-medium text-zinc-400 mb-1.5">
+            <label className="block text-md font-medium text-[#ffffff] mb-1.5">
               Email
             </label>
             <input
@@ -100,12 +107,12 @@ export default function Register() {
               required
               value={form.email}
               onChange={handle}
-              placeholder="you@example.com"
-              className="w-full bg-surface border border-border rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors"
+              placeholder="Enter your email"
+              className="w-full bg-[#000000] border border-border rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-[#aaaaaa] transition-colors"
             />
           </div>
           <div>
-            <label className="block text-xs font-medium text-zinc-400 mb-1.5">
+            <label className="block text-md font-medium text-[#ffffff] mb-1.5">
               Password
             </label>
             <input
@@ -114,26 +121,26 @@ export default function Register() {
               required
               value={form.password}
               onChange={handle}
-              placeholder="Min. 6 characters"
-              className="w-full bg-surface border border-border rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors"
+              placeholder="Minimum 6 characters"
+              className="w-full bg-[#000000] border border-border rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-[#aaaaaa] transition-colors"
             />
           </div>
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-accent hover:bg-accent-hover disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium py-3 rounded-xl text-sm transition-colors mt-2"
+            className="w-full bg-[#ffffff] hover:bg-[#aaaaaa] disabled:opacity-50 disabled:cursor-not-allowed text-black font-medium py-3 rounded-xl text-sm transition-colors mt-2"
           >
             {loading ? "Creating account..." : "Create account"}
           </button>
         </form>
 
         <p className="text-center text-sm text-zinc-500 mt-6">
-          Already have one?{" "}
+          Already have an account?{" "}
           <Link
             to="/login"
-            className="text-accent hover:text-white transition-colors"
+            className="text-white hover:text-[#aaaaaa] transition-colors"
           >
-            Sign in
+            Log In
           </Link>
         </p>
       </div>

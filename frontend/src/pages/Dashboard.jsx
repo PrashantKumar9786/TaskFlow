@@ -7,12 +7,12 @@ import TaskCard from "../components/TaskCard";
 import TaskModal from "../components/TaskModal";
 
 const COLUMNS = [
-  { id: "todo", label: "To Do", color: "#6366f1", dot: "bg-indigo-500" },
+  { id: "todo", label: "To Do", color: "#6366f1", dot: "bg-[#6B7280]" },
   {
     id: "in-progress",
     label: "In Progress",
     color: "#f59e0b",
-    dot: "bg-amber-400",
+    dot: "bg-[#3B82F6]",
   },
   { id: "done", label: "Done", color: "#22c55e", dot: "bg-green-500" },
 ];
@@ -92,12 +92,12 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[#000000]">
       {/* Navbar */}
-      <header className="border-b border-border bg-surface/80 backdrop-blur-sm sticky top-0 z-10">
+      <header className="border-b border-border bg-[#000000] backdrop-blur-sm sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-lg bg-accent flex items-center justify-center flex-shrink-0">
+            {/* <div className="w-7 h-7 rounded-lg bg-accent flex items-center justify-center flex-shrink-0">
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                 <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" />
                 <rect
@@ -128,15 +128,24 @@ export default function Dashboard() {
                   opacity="0.25"
                 />
               </svg>
+            </div> */}
+            <div>
+              <img
+                src="public/Task.png"
+                alt="Task Manager"
+                className="w-15 h-15"
+              />
             </div>
-            <span className="font-semibold tracking-tight">TaskFlow</span>
+            <span className="font-sans font-semibold tracking-tight">
+              Task Manager - Stay On Track
+            </span>
 
             {/* Stats pills */}
             <div className="hidden sm:flex items-center gap-2 ml-4">
-              <span className="text-xs bg-muted px-2.5 py-1 rounded-full text-zinc-400">
+              <span className="text-md bg-blue-500/18 px-2.5 py-1 rounded-full text-blue-400 border border-blue-400">
                 {stats.total} tasks
               </span>
-              <span className="text-xs bg-green-500/10 text-green-400 px-2.5 py-1 rounded-full">
+              <span className="text-md bg-green-500/18 text-green-400 px-2.5 py-1 rounded-full border border-green-400">
                 {stats.done} done
               </span>
               {stats.high > 0 && (
@@ -150,12 +159,12 @@ export default function Dashboard() {
           <div className="flex items-center gap-3">
             <button
               onClick={openCreate}
-              className="flex items-center gap-2 bg-accent hover:bg-accent-hover text-white text-sm font-medium px-4 py-2 rounded-xl transition-colors"
+              className="flex items-center gap-2 bg-[#ffffff] hover:bg-[#aaaaaa] text-black text-sm font-medium px-4 py-2 rounded-xl transition-colors"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path
                   d="M7 1v12M1 7h12"
-                  stroke="white"
+                  stroke="black"
                   strokeWidth="2"
                   strokeLinecap="round"
                 />
@@ -164,7 +173,7 @@ export default function Dashboard() {
             </button>
 
             <div className="flex items-center gap-2 pl-3 border-l border-border">
-              <div className="w-7 h-7 rounded-full bg-muted flex items-center justify-center text-xs font-medium text-zinc-300">
+              <div className="w-9 h-9 rounded-full bg-muted flex items-center justify-center text-md font-medium text-[#ffffff]">
                 {user?.name?.[0]?.toUpperCase()}
               </div>
               <span className="hidden sm:block text-sm text-zinc-400">
@@ -172,7 +181,7 @@ export default function Dashboard() {
               </span>
               <button
                 onClick={logout}
-                className="text-xs text-zinc-600 hover:text-zinc-300 transition-colors ml-1"
+                className="text-md text-[#ffffff] hover:text-[#aaaaaa] transition-colors ml-1"
               >
                 Sign out
               </button>
@@ -196,11 +205,11 @@ export default function Dashboard() {
                   <div key={col.id} className="flex flex-col">
                     {/* Column header */}
                     <div className="flex items-center gap-2.5 mb-4">
-                      <span className={`w-2 h-2 rounded-full ${col.dot}`} />
-                      <span className="text-sm font-medium text-zinc-300">
+                      <span className={`w-3 h-3 rounded-full ${col.dot}`} />
+                      <span className="text-md font-medium text-[#ffffff]">
                         {col.label}
                       </span>
-                      <span className="ml-auto text-xs font-mono text-zinc-600 bg-muted px-2 py-0.5 rounded-full">
+                      <span className="ml-auto text-xs font-mono text-white bg-black px-2 py-0.5 rounded-full border border-[#ffffff]">
                         {colTasks.length}
                       </span>
                     </div>
@@ -219,8 +228,8 @@ export default function Dashboard() {
                         >
                           {colTasks.length === 0 &&
                             !snapshot.isDraggingOver && (
-                              <div className="flex flex-col items-center justify-center h-32 text-zinc-700 text-sm">
-                                <span className="text-2xl mb-2">○</span>
+                              <div className="flex flex-col items-center justify-center h-32 text-zinc-700 text-md">
+                                <span className="text-2xl mb-2">....</span>
                                 Drop tasks here
                               </div>
                             )}
@@ -255,7 +264,7 @@ export default function Dashboard() {
                     {/* Add task inline shortcut */}
                     <button
                       onClick={openCreate}
-                      className="mt-3 flex items-center gap-2 text-xs text-zinc-700 hover:text-zinc-400 transition-colors py-1"
+                      className="mt-3 flex items-center gap-2 text-md text-zinc-700 hover:text-[#ffffff] transition-colors py-1"
                     >
                       <svg
                         width="12"

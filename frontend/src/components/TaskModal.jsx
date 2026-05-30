@@ -66,15 +66,15 @@ export default function TaskModal({ open, onClose, onSave, task }) {
       className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black/60 backdrop-blur-sm animate-fade-in"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
-      <div className="w-full max-w-md bg-surface border border-border rounded-2xl shadow-2xl animate-slide-in">
+      <div className="w-full max-w-md bg-[#000000] border border-border rounded-2xl shadow-2xl animate-slide-in">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-border">
-          <h2 className="text-base font-semibold text-white">
+          <h2 className="text-base font-semibold text-[#ffffff]">
             {isEditing ? "Edit task" : "New task"}
           </h2>
           <button
             onClick={onClose}
-            className="w-7 h-7 flex items-center justify-center rounded-lg hover:bg-muted text-zinc-500 hover:text-zinc-200 transition-colors"
+            className="w-7 h-7 flex items-center justify-center rounded-lg hover:bg-[#000000] text-zinc-500 hover:text-[#ffffff] transition-colors"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path
@@ -89,7 +89,7 @@ export default function TaskModal({ open, onClose, onSave, task }) {
 
         <form onSubmit={submit} className="px-6 py-5 space-y-4">
           <div>
-            <label className="block text-xs font-medium text-zinc-400 mb-1.5">
+            <label className="block text-md font-medium text-[#ffffff] mb-1.5">
               Title
             </label>
             <input
@@ -103,14 +103,14 @@ export default function TaskModal({ open, onClose, onSave, task }) {
           </div>
 
           <div>
-            <label className="block text-xs font-medium text-zinc-400 mb-1.5">
+            <label className="block text-md font-medium text-[#ffffff] mb-1.5">
               Description
             </label>
             <textarea
               name="description"
               value={form.description}
               onChange={handle}
-              placeholder="Add more detail... (optional)"
+              placeholder="Add more details... (optional)"
               rows={3}
               className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors resize-none"
             />
@@ -118,7 +118,7 @@ export default function TaskModal({ open, onClose, onSave, task }) {
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs font-medium text-zinc-400 mb-1.5">
+              <label className="block text-md font-medium text-[#ffffff] mb-1.5">
                 Stage
               </label>
               <select
@@ -135,7 +135,7 @@ export default function TaskModal({ open, onClose, onSave, task }) {
               </select>
             </div>
             <div>
-              <label className="block text-xs font-medium text-zinc-400 mb-1.5">
+              <label className="block text-md font-medium text-[#ffffff] mb-1.5">
                 Priority
               </label>
               <select
@@ -157,14 +157,14 @@ export default function TaskModal({ open, onClose, onSave, task }) {
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 bg-muted hover:bg-zinc-700 text-zinc-300 text-sm font-medium py-3 rounded-xl transition-colors"
+              className="flex-1 bg-[#000000] border border-[#333333] hover:bg-zinc-700 text-zinc-300 text-sm font-medium py-3 rounded-xl transition-colors"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={loading}
-              className="flex-1 bg-accent hover:bg-accent-hover disabled:opacity-50 text-white text-sm font-medium py-3 rounded-xl transition-colors"
+              className="flex-1 bg-[#ffffff] border border-[#333333] hover:bg-[#000000] disabled:opacity-50 text-black hover:text-white text-sm font-medium py-3 rounded-xl transition-colors"
             >
               {loading
                 ? "Saving..."
