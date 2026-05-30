@@ -130,11 +130,7 @@ export default function Dashboard() {
               </svg>
             </div> */}
             <div>
-              <img
-                src="public/Task.png"
-                alt="Task Manager"
-                className="w-15 h-15"
-              />
+              <img src="/Task.png" alt="Task Manager" className="w-15 h-15" />
             </div>
             <span className="font-sans font-semibold tracking-tight">
               Task Manager - Stay On Track
