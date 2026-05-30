@@ -59,7 +59,7 @@ export default function TaskCard({ task, onEdit, onDelete }) {
               className="w-6 h-6 flex items-center justify-center rounded-full hover:bg-white/10 text-zinc-500 hover:text-zinc-200 transition-colors"
             >
               <div>
-                <img src="public/Pencil.png" alt="edit" />
+                <img src="/Pencil.png" alt="edit" />
               </div>
             </button>
             <button
@@ -70,7 +70,7 @@ export default function TaskCard({ task, onEdit, onDelete }) {
               className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 text-zinc-500 hover:text-red-400 transition-colors"
             >
               <div>
-                <img src="public/Bin.webp" alt="delete" />
+                <img src="/Bin.webp" alt="delete" />
               </div>
             </button>
           </div>
