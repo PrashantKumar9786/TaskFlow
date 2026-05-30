@@ -8,8 +8,8 @@ A full-stack task management application where users can create, manage, and tra
 
 | Layer    | URL                                   |
 | -------- | ------------------------------------- |
-| Frontend | https://taskflow-yourname.vercel.app  |
-| Backend  | https://taskflow-backend.onrender.com |
+| Frontend | [https://task-management-xi-sandy.vercel.app/](https://task-management-xi-sandy.vercel.app/)  |
+| Backend  | [https://taskflow-backend.onrender.com](https://task-management-ku4m.onrender.com) |
 
 > **Note:** The backend is hosted on Render's free tier. It spins down after 15 minutes of inactivity, so the first request after an idle period may take 30–60 seconds to respond. Subsequent requests are fast.
 
